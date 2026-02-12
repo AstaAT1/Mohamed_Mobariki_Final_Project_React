@@ -46,6 +46,7 @@ const images = {
     blog2,
     blog1,
     model,
+    model1,
 
 
 }

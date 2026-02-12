@@ -44,6 +44,18 @@ const blogs = [
         titlecomment : "Your email address will not be published. Required fields are marked *",
         post: "POST COMMENT",
         lastcomment: "Please note, comments must be approved before they are published.",
+        title2:"Featured Products",
+        imageHelp1 : images.p2 ,
+        imageHelp2 : images.p3 ,
+        imageHelp3 : images.p4 ,
+        imageHelp4 : images.p5 ,
+        imageHelp5 : images.p6 ,
+        phelp1 : "Boxy7 T-Shirt with Roll Sleeve",
+         phelp2 : "Boxy6 T-Shirt with Roll Sleeve",
+          phelp3 : "Boxy5 T-Shirt with Roll Sleeve",
+           phelp4 : "Boxy4 T-Shirt with Roll Sleeve",
+            phelp5 : "Boxy3 T-Shirt with Roll Sleeve",
+            prix: "$20.00",
 
     },
     {
@@ -60,6 +72,18 @@ const blogs = [
         titlecomment : "Your email address will not be published. Required fields are marked *",
         post: "POST COMMENT",
         lastcomment: "Please note, comments must be approved before they are published.",
+        title2:"Featured Products",
+        imageHelp1 : images.p2 ,
+        imageHelp2 : images.p3 ,
+        imageHelp3 : images.p4 ,
+        imageHelp4 : images.p5 ,
+        imageHelp5 : images.p6 ,
+        phelp1 : "Boxy7 T-Shirt with Roll Sleeve",
+         phelp2 : "Boxy6 T-Shirt with Roll Sleeve",
+          phelp3 : "Boxy5 T-Shirt with Roll Sleeve",
+           phelp4 : "Boxy4 T-Shirt with Roll Sleeve",
+            phelp5 : "Boxy3 T-Shirt with Roll Sleeve",
+            prix: "$20.00",
 
     }
 ]
