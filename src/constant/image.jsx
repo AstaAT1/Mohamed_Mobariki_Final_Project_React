@@ -17,6 +17,11 @@ import p5 from "../assets/images/shopy6.webp"
 import p6 from "../assets/images/shopy7.webp"
 import p7 from "../assets/images/shopy8.webp"
 import p8 from "../assets/images/item-03.jpg"
+import blog1 from "../assets/images/blog-01.jpg"
+import blog2 from "../assets/images/blog-02.jpg"
+import blog3 from "../assets/images/blog-03.jpg"
+import model from "../assets/images/bg-video-01.jpg.webp"
+import model1 from "../assets/images/shop-item-09.jpg"
 const images = {
     logo,
     carousel1,
@@ -37,6 +42,10 @@ const images = {
     p6,
     p7,
     p8,
+    blog3,
+    blog2,
+    blog1,
+    model,
 
 
 }

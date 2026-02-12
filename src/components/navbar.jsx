@@ -32,11 +32,11 @@ fashe@example.com
 
       <img src={images.logo} alt="logo" />
       <div className="flex justify-center text-[16.5px] items-center gap-8 text-gray-700">
-    <Link to="path" className="hover:border-b border-red-700">Home</Link>
-    <Link to="path" className="hover:border-b border-red-700">Shop</Link>
+    <Link to= "/home"  className="hover:border-b border-red-700">Home</Link>
+    <Link to={{pathname:"shop"}} className="hover:border-b border-red-700">Shop</Link>
     <Link to="path" className="hover:border-b border-red-700">Sale</Link>
     <Link to="path" className="hover:border-b border-red-700">Features</Link>
-    <Link to="path" className="hover:border-b border-red-700">Blog</Link>
+    <Link to={{pathname:"blog"}}  className="hover:border-b border-red-700">Blog</Link>
     <Link to="path" className="hover:border-b border-red-700">About</Link>
     <Link to="path" className="hover:border-b border-red-700">Contact</Link>
 
