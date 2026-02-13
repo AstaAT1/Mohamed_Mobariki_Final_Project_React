@@ -19,24 +19,21 @@ const products = Array.from({ length: 8 }, (_, i) => ({
     <div className="bg-white">
       <Navbar />
 
-      {/* HERO */}
-      <section className="relative">
-        <img src={image.shop1} alt="" className="w-full h-[380px] object-cover" />
+      <div className="relative">
+        <img src={image.shop1} alt="" className="w-full h-[280px] object-cover" />
         <div className="absolute inset-0 bg-black/40 flex flex-col items-center justify-center">
           <h1 className="text-white text-5xl font-bold tracking-widest">
             FEATURED
           </h1>
-          <p className="text-white/90 mt-2">Featured Collection 2018</p>
+         
         </div>
-      </section>
+      </div>
 
-      {/* CONTENT */}
       <section className="max-w-7xl mx-auto px-4 py-14">
         <div className="flex flex-col lg:flex-row gap-10">
 
-          {/* SIDEBAR */}
           <aside className="w-full lg:w-[260px] space-y-10 text-sm">
-            {/* Categories */}
+         
             <div>
               <h2 className="font-bold mb-4 text-lg">Categories</h2>
               <ul className="space-y-2 text-gray-600">
@@ -86,7 +83,7 @@ const products = Array.from({ length: 8 }, (_, i) => ({
               </div>
             </div>
 
-            {/* Search */}
+         
             <div>
               <input
                 placeholder="Search..."
@@ -95,9 +92,9 @@ const products = Array.from({ length: 8 }, (_, i) => ({
             </div>
           </aside>
 
-          {/* MAIN */}
+       
           <main className="flex-1">
-            {/* TOP BAR */}
+          
             <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4 mb-8 text-sm">
               <div className="flex gap-3">
                 <select className="border border-gray-200 p-2 rounded bg-white">
@@ -112,7 +109,7 @@ const products = Array.from({ length: 8 }, (_, i) => ({
               <p className="text-gray-500">Showing 1 to 8 of 8 items</p>
             </div>
 
-            {/* PRODUCTS (Flex بدل Grid) */}
+        
             <div className="flex flex-wrap gap-8">
               {products.map((p) => (
                 <div
@@ -155,7 +152,7 @@ const products = Array.from({ length: 8 }, (_, i) => ({
               ))}
             </div>
 
-            {/* PAGINATION */}
+           
             <div className="flex gap-3 mt-12">
               <button className="w-10 h-10 rounded-full border bg-black text-white">
                 1
@@ -169,7 +166,7 @@ const products = Array.from({ length: 8 }, (_, i) => ({
 
       <Footer />
     </div>
-  );
+  )
 }
 
 export default Shop;

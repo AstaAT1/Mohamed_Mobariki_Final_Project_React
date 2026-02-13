@@ -1,8 +1,8 @@
-import React from "react";
-import { useBlogs } from "../context/blogContext";
+import React, { useContext } from "react";
+import { BlogContext } from "../context/blogContext";
 
 export default function BlogSection() {
-  const { blogs } = useBlogs();
+  const { blogs } = useContext(BlogContext);
 
   return (
     <section className="bg-white">
@@ -13,37 +13,22 @@ export default function BlogSection() {
 
         <div className="flex flex-wrap gap-10">
           {blogs.map((b) => (
-            <article
-              key={b.id}
-              className="w-full md:w-[calc(33.333%-26.7px)]"
-            >
-              {/* image */}
-              <div className="overflow-hidden">
-                <img
-                  src={b.image}
-                  alt={b.title}
-                  className="w-full h-[280px] object-cover"
-                />
-              </div>
+            <article key={b.id} className="w-full md:w-[30%]">
+              <img
+                src={b.image}
+                alt=""
+                className="w-full h-[280px] object-cover"
+              />
 
-              {/* title */}
-              <h3 className="mt-6 text-xl font-semibold text-gray-900 leading-snug">
-                {b.title}
-              </h3>
-
-              {/* meta */}
-              <p className="mt-2 text-sm text-gray-500">
-                {b.p1}
-              </p>
-
-              {/* excerpt */}
-              <p className="mt-6 text-sm text-gray-500 leading-7">
-                {b.p2.length > 140 ? b.p2.slice(0, 140) + "..." : b.p2}
+              <h3 className="mt-6 text-xl font-semibold">{b.title}</h3>
+              <p className="text-sm text-gray-500 mt-2">{b.p1}</p>
+              <p className="text-sm text-gray-500 mt-4">
+                {b.p2.slice(0, 120)}...
               </p>
             </article>
           ))}
         </div>
       </div>
     </section>
-  );
+  )
 }

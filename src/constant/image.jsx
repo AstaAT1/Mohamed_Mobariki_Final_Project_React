@@ -22,6 +22,7 @@ import blog2 from "../assets/images/blog-02.jpg"
 import blog3 from "../assets/images/blog-03.jpg"
 import model from "../assets/images/bg-video-01.jpg.webp"
 import model1 from "../assets/images/shop-item-09.jpg"
+import banner from "../assets/images/banner.webp"
 const images = {
     logo,
     carousel1,
@@ -47,6 +48,7 @@ const images = {
     blog1,
     model,
     model1,
+    banner,
 
 
 }
