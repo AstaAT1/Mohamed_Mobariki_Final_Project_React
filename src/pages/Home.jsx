@@ -7,9 +7,15 @@ import Footer from "../components/footer"
 import image from "../constant/image"
 import BlogSection from '../components/blogSection';
 import {IoIosArrowForward , IoIosArrowBack } from "../constant/icons"
+import { useContext } from 'react';
+import { CartContext } from '../context/cartContext';
+
+
 
 function Home() {
 
+
+const { addToCart } = useContext(CartContext);
  
   return (
   
@@ -19,7 +25,7 @@ function Home() {
 <div className="flex justify-between px-43">
   <div className=" flex gap-10 flex-col w-[31%]">
     <Link to="/shop"  className="overflow-hidden">
-      <img src={image.shopProduct1} className="hover:scale-110 transition duration-800" alt="" />
+      <img src={image.shopProduct1} onClick={addToCart} className="hover:scale-110 transition duration-800" alt="" />
       <button className="absolute hover:bg-red-500 tracking-wider top-130 left-65 opacity-96  py-3 px-14 bg-white shadow ">DRESSES</button>
     </Link>
     <Link className="overflow-hidden"  to="/shop">
