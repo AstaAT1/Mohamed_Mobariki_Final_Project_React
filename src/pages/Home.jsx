@@ -8,6 +8,7 @@ import {IoIosArrowForward , IoIosArrowBack } from "../constant/icons"
 import { useContext } from 'react';
 import { CartContext } from '../context/cartContext';
 import CarouselHome from '../components/carousel1';
+import CarouselHome2 from '../components/carousel2';
 
 
 
@@ -64,6 +65,8 @@ const { addToCart } = useContext(CartContext);
   </div>
 </div>
 
+<CarouselHome2/>
+
 {/* model section */}
  
 <div className="bg-gray-100 py-16 px-10 lg:px-32">
@@ -94,13 +97,13 @@ const { addToCart } = useContext(CartContext);
         className=" h-100  hover:scale-130 transition duration-500"
       />
 
-      <h3 className="text-gray-700 text-lg absolute top-500">
+      <h3 className="text-gray-700 text-lg absolute top-685">
         Boxy2 T-Shirt with Roll Sleeve
       </h3>
 
-      <p className="text-gray-900 font-semibold text-lg absolute top-508  mb-6">$20.00</p>
+      <p className="text-gray-900 font-semibold text-lg absolute top-695  mb-6">$20.00</p>
 
-   <div className="flex gap-3 absolute top-518">
+   <div className="flex gap-3 absolute top-705">
 
   <div className="border p-1 border-gray-300  flex justify-center items-center flex-col text-sm text-gray-700">
     <p className="text-xl">-2600</p>
@@ -128,6 +131,46 @@ const { addToCart } = useContext(CartContext);
 </div>
 {/* Blog Section */}
 <BlogSection/>
+ <section className="bg-white  px-6">
+      <div className="max-w-6xl mx-auto">
+
+        <h2 className="text-3xl md:text-4xl font-semibold text-center mb-16 tracking-wide">
+          @ FOLLOW US ON INSTAGRAM
+        </h2>
+
+        <div className="grid md:grid-cols-3 text-center">
+
+          <div className="px-6 md:border-r border-gray-300">
+            <h3 className="text-lg font-medium mb-2">
+              Free Delivery Worldwide
+            </h3>
+            <p className="text-sm text-gray-500 italic">
+              Mirum est notare quam littera gothica
+            </p>
+          </div>
+
+          <div className="px-6 md:border-r border-gray-300 mt-10 md:mt-0">
+            <h3 className="text-lg font-medium mb-2">
+              30 Days Return
+            </h3>
+            <p className="text-sm text-gray-500 italic">
+              Simply return it within 30 days for an exchange.
+            </p>
+          </div>
+
+          <div className="px-6 mt-10 md:mt-0">
+            <h3 className="text-lg font-medium mb-2">
+              Store Opening
+            </h3>
+            <p className="text-sm text-gray-500 italic">
+              Shop open from Monday to Sunday
+            </p>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
 
 
 
