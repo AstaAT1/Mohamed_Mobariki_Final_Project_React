@@ -1,5 +1,6 @@
 import React, { useContext } from "react";
 import { BlogContext } from "../context/blogContext";
+import { Link } from "react-router-dom";
 
 export default function BlogSection() {
   const { blogs } = useContext(BlogContext);
@@ -13,7 +14,7 @@ export default function BlogSection() {
 
         <div className="flex flex-wrap gap-10">
           {blogs.map((b) => (
-            <article key={b.id} className="w-full md:w-[30%]">
+            <Link to={`/blog/${b.id}`} key={b.id} className="w-full md:w-[30%]">
               <img
                 src={b.image}
                 alt=""
@@ -25,7 +26,7 @@ export default function BlogSection() {
               <p className="text-sm text-gray-500 mt-4">
                 {b.p2.slice(0, 120)}...
               </p>
-            </article>
+            </Link>
           ))}
         </div>
       </div>

@@ -6,12 +6,13 @@ import Blog from "./pages/blog";
 
 
 
+
 function App() {
   return (
     <Routes>
       <Route path="/home" element={<Home />} />
       <Route path="/shop" element={<Shop />} />
-      <Route path="/blog" element={<Blog />} />
+      <Route path="/blog/:id" element={<Blog />} />
     </Routes>
   )
 }
