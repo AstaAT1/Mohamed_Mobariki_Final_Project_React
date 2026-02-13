@@ -1,5 +1,3 @@
-
-
 import React from 'react'
 import { Link } from "react-router-dom";
 import Navbar from "../components/navbar";
@@ -9,6 +7,7 @@ import BlogSection from '../components/blogSection';
 import {IoIosArrowForward , IoIosArrowBack } from "../constant/icons"
 import { useContext } from 'react';
 import { CartContext } from '../context/cartContext';
+import CarouselHome from '../components/carousel1';
 
 
 
@@ -19,19 +18,23 @@ const { addToCart } = useContext(CartContext);
  
   return (
   
- <div>
-      <Navbar />
-<div></div>
+<div className="flex flex-col gap-20">
+ 
+  <div className="w-full flex-none">
+     <Navbar />
+    <CarouselHome />
+  </div>
+
 <div className="flex justify-between px-43">
   <div className=" flex gap-10 flex-col w-[31%]">
     <Link to="/shop"  className="overflow-hidden">
       <img src={image.shopProduct1} onClick={addToCart} className="hover:scale-110 transition duration-800" alt="" />
-      <button className="absolute hover:bg-red-500 tracking-wider top-130 left-65 opacity-96  py-3 px-14 bg-white shadow ">DRESSES</button>
+      <button className="absolute hover:bg-red-500 tracking-wider top-285 left-65 opacity-96  py-3 px-14 bg-white shadow ">DRESSES</button>
     </Link>
     <Link className="overflow-hidden"  to="/shop">
      
       <img src={image.shopProduct4} className="hover:scale-110 transition duration-800"  alt="" />
-            <button className="absolute hover:bg-red-500 tracking-wider top-98 left-165 opacity-98  py-3 px-14 bg-white shadow ">WATCH</button>
+            <button className="absolute hover:bg-red-500 tracking-wider top-255 left-170 opacity-98  py-3 px-14 bg-white shadow ">WATCH</button>
     </Link>
 
   </div>
@@ -39,23 +42,23 @@ const { addToCart } = useContext(CartContext);
     <Link className="overflow-hidden" to="/shop" >
      <img src={image.shopProduct2} className="hover:scale-110 transition duration-800" alt="" />
 
-            <button className="absolute hover:bg-red-500 tracking-wider top-223 left-65 opacity-98  py-3 px-14 bg-white shadow ">GLASSES</button>
+            <button className="absolute hover:bg-red-500 tracking-wider top-385 left-65 opacity-98  py-3 px-14 bg-white shadow ">GLASSES</button>
     </Link>
     <Link className="overflow-hidden"   to="/shop">
     <img src={image.shopProduct5} className="hover:scale-110 transition duration-800"  alt="" />
 
-            <button className="absolute hover:bg-red-500 tracking-wider top-223 left-165 opacity-98  py-3 px-14 bg-white shadow ">FOOTERWEAR</button>
+            <button className="absolute hover:bg-red-500 tracking-wider top-385 left-165 opacity-98  py-3 px-14 bg-white shadow ">FOOTERWEAR</button>
     </Link>
 
   </div>
     <div className=" flex gap-10 flex-col w-[31%]">
     <Link  className="overflow-hidden" to="/shop">
       <img src={image.shopProduct3} className="hover:scale-110 transition duration-800" alt="" />
-        <button className="absolute hover:bg-red-500 tracking-wider top-130 left-272 opacity-96  py-3 px-14 bg-white shadow ">BAGS</button>
+        <button className="absolute hover:bg-red-500 tracking-wider top-285 left-272 opacity-96  py-3 px-14 bg-white shadow ">BAGS</button>
     </Link>
     <Link className="overflow-hidden" to="/shop">
        <img src={image.shopProduct6} className="hover:scale-110 transition duration-800"  alt="" />
-      <button className="absolute hover:bg-red-500 tracking-wider top-223 left-265 opacity-98  py-3 px-14 bg-white shadow ">ACCESSORIES</button>
+      <button className="absolute hover:bg-red-500 tracking-wider top-385 left-265 opacity-98  py-3 px-14 bg-white shadow ">ACCESSORIES</button>
     </Link>
 
   </div>
@@ -91,13 +94,13 @@ const { addToCart } = useContext(CartContext);
         className=" h-100  hover:scale-130 transition duration-500"
       />
 
-      <h3 className="text-gray-700 text-lg absolute top-320">
+      <h3 className="text-gray-700 text-lg absolute top-500">
         Boxy2 T-Shirt with Roll Sleeve
       </h3>
 
-      <p className="text-gray-900 font-semibold text-lg absolute top-328  mb-6">$20.00</p>
+      <p className="text-gray-900 font-semibold text-lg absolute top-508  mb-6">$20.00</p>
 
-   <div className="flex gap-3 absolute top-338">
+   <div className="flex gap-3 absolute top-518">
 
   <div className="border p-1 border-gray-300  flex justify-center items-center flex-col text-sm text-gray-700">
     <p className="text-xl">-2600</p>

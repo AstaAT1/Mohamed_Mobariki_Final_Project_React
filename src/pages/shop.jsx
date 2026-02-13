@@ -2,25 +2,41 @@ import React from "react";
 import Navbar from "../components/navbar";
 import Footer from "../components/footer";
 import image from "../constant/image";
+import { useContext , useState } from 'react';
+import { CartContext } from '../context/cartContext';
+
 
 function Shop() {
-  
-const products = Array.from({ length: 8 }, (_, i) => ({
-  id: i + 1,
-  title: `Boxy T-Shirt with Roll Sleeve`,
-  img: image[`p${i + 1}`],
+  const { addToCart } = useContext(CartContext);
 
-  sale: i + 1 == 5,
+  const [search, setSearch] = useState("");
 
-  oldPrice: i + 1 == 5 ? "$30.00" : null,
-  price: i + 1 == 5 ? "$20.00" : "$30.00",
-}))
+  const products = Array.from({ length: 8 }, (_, i) => ({
+    id: i + 1,
+    title:
+      i === 0
+        ? "Boxy T-Shirt with Roll Sleeve Detail"
+        : `Boxy${i} T-Shirt with Roll Sleeve`,
+    img: image[`p${i + 1}`],
+    sale: i + 1 === 5,
+    oldPrice: i + 1 === 5 ? "$30.00" : null,
+    price: i + 1 === 5 ? "$20.00" : "$30.00",
+  }));
+
+  const filteredProducts = products.filter((p) =>
+    p.title.toLowerCase().includes(search.toLowerCase())
+  );
+
   return (
+    
+
+    
+  
     <div className="bg-white">
       <Navbar />
 
       <div className="relative">
-        <img src={image.shop1} alt="" className="w-full h-[280px] object-cover" />
+        <img src={image.shop1} alt=""  className="w-full h-[280px] object-cover" />
         <div className="absolute inset-0 bg-black/40 flex flex-col items-center justify-center">
           <h1 className="text-white text-5xl font-bold tracking-widest">
             FEATURED
@@ -44,7 +60,7 @@ const products = Array.from({ length: 8 }, (_, i) => ({
               </ul>
             </div>
 
-            {/* Color */}
+          
             <div>
               <h2 className="font-bold mb-3 text-lg">color</h2>
               <div className="space-y-2 text-gray-600">
@@ -57,7 +73,7 @@ const products = Array.from({ length: 8 }, (_, i) => ({
               </div>
             </div>
 
-            {/* Price */}
+      
             <div>
               <h2 className="font-bold mb-3 text-lg">price</h2>
               <div className="space-y-2 text-gray-600">
@@ -85,10 +101,13 @@ const products = Array.from({ length: 8 }, (_, i) => ({
 
          
             <div>
-              <input
-                placeholder="Search..."
-                className="border border-gray-200 w-full p-3 rounded outline-none"
-              />
+             <input
+  value={search}
+  onChange={(e) => setSearch(e.target.value)}
+  placeholder="Search..."
+  className="border border-gray-200 w-full p-3 rounded outline-none"
+/>
+
             </div>
           </aside>
 
@@ -109,48 +128,53 @@ const products = Array.from({ length: 8 }, (_, i) => ({
               <p className="text-gray-500">Showing 1 to 8 of 8 items</p>
             </div>
 
-        
-            <div className="flex flex-wrap gap-8">
-              {products.map((p) => (
-                <div
-                  key={p.id}
-                  className="w-full sm:w-[calc(50%-16px)] lg:w-[calc(33.333%-22px)]"
-                >
-                  <div className="relative bg-gray-100 overflow-hidden">
-                    {p.sale && (
-                      <span className="absolute top-3 left-3 bg-red-500 text-white text-xs px-3 py-1 rounded-full z-10">
-                        Sale
-                      </span>
-                    )}
-
-                 
-                    <img
-                      src={p.img}
-                      alt=""
-                      className="w-full h-[380px] object-cover"
-                    />
-                  </div>
-
-                  <h3 className="mt-4 text-sm font-medium text-gray-800">
-                    {p.title}
-                  </h3>
-                 <div className="mt-1 text-sm">
-  {p.sale ? (
-    <div className="flex gap-2 items-center">
-      <span className="line-through text-gray-400">
-        {p.oldPrice}
-      </span>
-      <span className="text-red-500 font-semibold">
-        {p.price}
-      </span>
-    </div>
+      <div className="flex flex-wrap gap-8">
+  {filteredProducts.length === 0 ? (
+    <p className="text-gray-500">No products found.</p>
   ) : (
-    <span className="text-gray-600">{p.price}</span>
+    filteredProducts.map((p) => (
+      <div
+        key={p.id}
+        className="w-full sm:w-[calc(50%-16px)] lg:w-[calc(33.333%-22px)]"
+      >
+        <div className="relative bg-gray-100 overflow-hidden group">
+          {p.sale && (
+            <span className="absolute top-3 left-3 bg-red-500 text-white text-xs px-3 py-1 rounded-full z-10">
+              Sale
+            </span>
+          )}
+
+          <img src={p.img} alt="" className="w-full h-[380px]" />
+          <div className="absolute inset-0 bg-black/25 opacity-0 group-hover:opacity-100 transition" />
+
+          <button
+            onClick={addToCart}
+            className="absolute left-1/2 -translate-x-1/2 bottom-9
+                       bg-black text-white rounded-full py-2 w-[180px] shadow
+                       translate-y-4 opacity-0 cursor-pointer
+                       group-hover:opacity-100 hover:bg-red-600 group-hover:translate-y-0
+                       transition-all duration-300"
+          >
+            ADD TO CART
+          </button>
+        </div>
+
+        <h3 className="mt-4 text-sm font-medium text-gray-800">{p.title}</h3>
+
+        <div className="mt-1 text-sm">
+          {p.sale ? (
+            <div className="flex gap-2 items-center">
+              <span className="line-through text-gray-400">{p.oldPrice}</span>
+              <span className="text-red-500 font-semibold">{p.price}</span>
+            </div>
+          ) : (
+            <span className="text-gray-600">{p.price}</span>
+          )}
+        </div>
+      </div>
+    ))
   )}
 </div>
-                </div>
-              ))}
-            </div>
 
            
             <div className="flex gap-3 mt-12">
@@ -167,6 +191,7 @@ const products = Array.from({ length: 8 }, (_, i) => ({
       <Footer />
     </div>
   )
+
 }
 
 export default Shop;
