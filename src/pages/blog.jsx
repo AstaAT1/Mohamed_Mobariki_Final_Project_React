@@ -66,7 +66,7 @@ export default function Blog() {
               </div>
             </div>
 
-            {/* COMMENTS */}
+            
             <h3 className="text-2xl font-bold mt-14">1 COMMENT TO SHOW</h3>
 
             <div className="flex gap-6 mt-8">
