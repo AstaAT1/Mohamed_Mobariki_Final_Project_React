@@ -5,7 +5,6 @@ import Blog from "./pages/blog";
 
 
 
-
 function App() {
   return (
     
@@ -13,6 +12,7 @@ function App() {
       <Route path="/home" element={<Home />} />
       <Route path="/shop" element={<Shop />} />
       <Route path="/blog/:id" element={<Blog />} />
+
     </Routes>
   )
 }

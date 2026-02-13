@@ -57,7 +57,9 @@ fashe@example.com
 
       </div>
       <div className="flex justify-center items-center text-[28px] gap-5 ">
-        <CgProfile className="border-r  gap-10 w-15 text-gray-600 "/>
+ <Link to="/Login">
+    <CgProfile className="border-r gap-10 w-15 text-gray-600 cursor-pointer" />
+  </Link>
     <div className="relative">
   <GrShop className="text-gray-600" />
 
